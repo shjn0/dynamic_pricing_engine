@@ -1,0 +1,9 @@
+FROM ruby:3.4.5-alpine3.22
+RUN apk add --no-cache bash build-base rust cargo openssl-dev yaml-dev zlib-dev gmp-dev git tzdata
+RUN mkdir /app
+WORKDIR /app
+COPY Gemfile* ./
+RUN bundle config set --local with 'development test' && \
+    bundle config set --local frozen false && \
+    bundle install
+COPY . .

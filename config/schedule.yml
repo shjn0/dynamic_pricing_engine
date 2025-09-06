@@ -1,0 +1,4 @@
+update_price:
+  cron: "*/5 * * * *"
+  class: "InitUpdatePriceJob"
+  queue: default

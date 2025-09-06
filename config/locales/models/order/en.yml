@@ -1,0 +1,8 @@
+en:
+  mongoid:
+    errors:
+      models:
+        order:
+          attributes:
+            order_items:
+              out_of_stock: "%{product_id} is out of stock."
